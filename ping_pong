@@ -1,0 +1,24 @@
+from pygame import *
+
+init()
+size = [700, 500]
+main_window = display.set_mode(size)
+display.set_caption('Пинг Понг')
+
+background = transform.scale(image.load('background.jpg'), size)
+
+clock = time.Clock()
+FPS = 60
+
+game_exit = True
+finish_game = True
+
+while game_exit:
+    for game_event in event.get():
+        if game_event.type == QUIT:
+            game_exit = False
+            
+    main_window.blit(background, (0, 0))
+
+    display.update()
+    clock.tick(FPS)
